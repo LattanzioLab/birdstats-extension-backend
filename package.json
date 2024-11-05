@@ -1,7 +1,7 @@
 {
   "name": "birdstats-backend",
   "version": "1.0.0",
-  "description": "Backend server for verifying Twitch JWTs and updating extension configuration.",
+  "description": "Backend server for Bird Stats! Twitch Extension. Used for verifying Twitch JWTs and updating extension configuration.",
   "main": "backend.js",
   "scripts": {
     "start": "node backend.js"
