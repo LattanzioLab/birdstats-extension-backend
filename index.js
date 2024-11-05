@@ -91,7 +91,7 @@ app.use((req, res, next) => {
         }
     ).then(resp => {
     //Keep note of rate limits... cannot make too many requests too quickly
-    console.error('Relay PubSub OK', resp.status, resp.headers.get('ratelimit-remaining'), '/', resp.headers.get('ratelimit-limit'));
+    console.log('PubSub POST Successful', resp.status, resp.headers.get('ratelimit-remaining'), '/', resp.headers.get('ratelimit-limit'));
 })
 .catch(err => {
     console.error(err);
