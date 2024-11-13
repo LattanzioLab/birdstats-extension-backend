@@ -17,10 +17,10 @@ const config = {
 const ext_secret = Buffer.from(config.extension_secret, 'base64');
 
 //Start the server
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log("Server listening on port " + PORT);
    });
-
+server.setTimeout(120000);
 // create application/json parser
 var jsonParser = bodyParser.json()
  
@@ -49,7 +49,7 @@ app.use((req, res, next) => {
     }
   }
   //Respond to the POST call, check for the payload
-  app.post('/config', jsonParser, function (req, res) {
+  app.post('/', jsonParser, function (req, res) {
     const payload = verifyAndDecode(req.headers.authorization);
     if (payload) {
     body = req.body;
